@@ -3,7 +3,7 @@ const
     { createRow } = require('../utils'),
     iss = require('./issInfo'),
     dayjs = require('dayjs'),
-    { version: v } = require('../../package.json');
+    { version: v, author, repository: rep } = require('../../package.json');
 
 
 /**
@@ -57,8 +57,8 @@ module.exports = async () => {
     stuffToReturn.push(table.toString());
 
     stuffToReturn.push(' ----------------------------------'.gray);
-    stuffToReturn.push('   Made by: '.magenta.bold + 'Cryptid1'.bgBlue.bold);
-    stuffToReturn.push('   Code at: '.magenta.bold + 'Here'.grey);
+    stuffToReturn.push('   Made by: '.magenta.bold + author.bgBlue.bold);
+    stuffToReturn.push('   Code at: '.magenta.bold + rep.grey);
     stuffToReturn.push(' ----------------------------------'.gray);
 
 

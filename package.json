@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node ."
   },
-  "author": "EH",
+  "author": "Cryptid1",
   "license": "ISC",
   "dependencies": {
     "cli-table3": "^0.6.0",
@@ -15,5 +15,6 @@
     "express": "^4.17.1",
     "mathjs": "^6.6.4",
     "node-fetch": "^2.6.0"
-  }
+  },
+  "repository": "https://github.com/Cryptid1/iss-tracker-cli"
 }

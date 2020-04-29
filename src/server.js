@@ -39,7 +39,7 @@ app.get('/', async (req, res) => {
 
     } else
         // Not a Command Line HTTP Client, sorry.
-        res.status(400).send();
+        res.status(404).send();
 });
 
 
