@@ -30,10 +30,15 @@ app.get('/', async (req, res) => {
             const table = await cli();
             if (!table) throw new Error();
 
-            res.status(200).send(table + '\n');
+            res.send(
+                '\n' + 
+                table 
+                + '\n'
+            );
+
         } catch(e) {
             res.status(500)
-                .send('Error [500]: '.bold.red + 'An internal error has occurred, possibly from one of the APIs.');
+                .send('Error [500]: '.bold.red + 'An internal error has occurred, possibly from one of the APIs.\n');
         }
         
 
