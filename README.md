@@ -7,8 +7,10 @@ Can only be used by 2 command line HTTP clients: **`curl`** and **`HTTPie`**. If
 <br/>
 **The endpoint can be accessed via `iss.cryptid.dev`** 
 
-## Examples 
-![example1](/examples/example1.png)
+## Example
+![example1](/examples/examplegif.gif)
+
+## How to use
 
 ### cURL
 ```sh
@@ -16,9 +18,29 @@ Can only be used by 2 command line HTTP clients: **`curl`** and **`HTTPie`**. If
 $ curl iss.cryptid.dev
 ```
 
-
 ### HTTPie
 ```sh
 # Using httpie:
 $ http iss.cryptid.dev
+```
+<br/>
+
+#### Without color
+
+If you want a boring monotone version of the table, you can use the `mono` query:
+```sh
+# Its pretty much the same method for bot cURL and HTTPie:
+$ http "iss.cryptid.dev?mono"
+``` 
+You may have to use this monotone version if you're using Window's Command Prompt.
+
+#### Units
+Units for some information (where required) can be:
+ * [`km (kilometers)`](https://en.wikipedia.org/wiki/Kilometre "In case you dont know :)")
+ * [`miles`](https://en.wikipedia.org/wiki/Mile "In case you dont know :)")
+
+You can pass through your desired unit type via the `units` query:
+```sh
+# Using HTTPie:
+$ http iss.cryptid.dev units==miles
 ```

@@ -1,8 +1,8 @@
 // Functions to get information related to the ISS
 const 
     fetch = require('node-fetch'),
-    { round } = require('mathjs'); // Will use the rounding function.
-
+    { round } = require('mathjs'), // Will use the rounding function.
+    { URLSearchParams } = require('url');
 
 
 /**
@@ -11,12 +11,18 @@ const
  * 
  * Data from: https://wheretheiss.at/ (https://wheretheiss.at/w/developer)
  * 
+ * @argument {'km' | 'miles' | 'kilometers' | 'metric' | 'imperial'} units The units
+ * 
  * @returns {Promise} The object containg the required info.
  */
-exports.getIssData = async () => {
+exports.getIssData = async (units = 'kilometers') => {
+
+    if (units === 'km')
+        units = 'kilometer';
+
 
     // ISS Info
-    let i = await fetch('https://api.wheretheiss.at/v1/satellites/25544');
+    let i = await fetch(`https://api.wheretheiss.at/v1/satellites/25544?units=${units}`);
     if (!i.ok) return;
 
     let issData = await i.json();

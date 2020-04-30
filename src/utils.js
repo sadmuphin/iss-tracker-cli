@@ -20,3 +20,12 @@ exports.createRow = ([a, b], [x, y]) =>
     ];
 
 
+/**
+ * Generates warning text:
+ * 
+ * @param {string} msg The warning message
+ */
+exports.warning = msg => 
+    'Warning:'.bgYellow.bold + ' ' + msg;
+
+
