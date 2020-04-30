@@ -15,8 +15,8 @@ exports.isFromCommandLine = userAgent => (/curl|httpie/i).test(userAgent);
  */
 exports.createRow = ([a, b], [x, y]) => 
     [
-        { content: a.red.bold, vAlign: 'center' }, { content: b.yellow, vAlign: 'center' },
-        { content: x.red.bold, vAlign: 'center' }, { content: y.yellow, vAlign: 'center' },
+        { content: a.red.bold, vAlign: 'center' }, { content: b.brightYellow, vAlign: 'center' },
+        { content: x.red.bold, vAlign: 'center' }, { content: y.brightYellow, vAlign: 'center' },
     ];
 
 
