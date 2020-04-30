@@ -32,7 +32,6 @@ If you want a boring monotone version of the table, you can use the `mono` query
 # Its pretty much the same method for bot cURL and HTTPie:
 $ http "iss.cryptid.dev?mono"
 ``` 
-You may have to use this monotone version if you're using Window's Command Prompt.
 
 #### Units
 Units for some information (where required) can be:
