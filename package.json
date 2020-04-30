@@ -1,6 +1,6 @@
 {
   "name": "iss-tracker-cli",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "An ISS tracker",
   "main": "src/server.js",
   "scripts": {
