@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node ."
   },
-  "author": "Cryptid1",
+  "author": "cryptidv",
   "license": "ISC",
   "dependencies": {
     "better-strip-color": "^1.0.2",
@@ -18,5 +18,5 @@
     "node-fetch": "^2.6.0",
     "string-similarity": "^4.0.1"
   },
-  "repository": "https://github.com/Cryptid1/iss-tracker-cli"
+  "repository": "https://github.com/cryptidv/iss-tracker-cli"
 }
