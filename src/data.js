@@ -1,17 +1,15 @@
 // Contains various information and data.
 
+// The possible queries. If not one of these it's invalid.
 exports.possibleQueries = [
     'mono',
     'units'
-]
+];
 
-
-exports.messages = {
-    notAQuery: (query, closest) => {
-        let string = '\'' + query.brightYellow.bold + '\'' + ' is not a query.'
-        if (closest)
-            string += ' Maybe you meant \''
-            + closest.brightGreen.bold + '\' instead?'   
-        return string;
-    }
-}
+// The possible units.
+exports.possibleUnits = [
+    'mi',
+    'miles',
+    'km',
+    'kilometers'
+];

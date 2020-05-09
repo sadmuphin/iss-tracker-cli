@@ -11,7 +11,7 @@ const
  * 
  * Data from: https://wheretheiss.at/ (https://wheretheiss.at/w/developer)
  * 
- * @argument {'km' | 'miles' | 'kilometers' | 'metric' | 'imperial'} units The units
+ * @argument {string} units The units
  * 
  * @returns {Promise} The object containg the required info.
  */
@@ -19,6 +19,8 @@ exports.getIssData = async (units = 'kilometers') => {
 
     if (units === 'km')
         units = 'kilometer';
+    else if (units === 'mi')
+        units = 'miles'
 
 
     // ISS Info

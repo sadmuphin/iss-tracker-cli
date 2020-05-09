@@ -3,13 +3,15 @@ const
     { createRow, warning } = require('../utils'),
     iss = require('./issInfo'),
     dayjs = require('dayjs'),
-    { version: v, author, repository: rep } = require('../../package.json');
+    { version: v, author, repository: rep } = require('../../package.json'),
+    { possibleUnits } = require('../data');
+
 
 
 /**
  * Creates the actual Info Table.
  *
- * @param {'km' | 'miles' | 'kilometers'} units The units the data should be returned with, either `metric` or `imperial`
+ * @param {string} units The units the data should be returned with, either `metric` or `imperial`
  * @param {Array<string>} extraInfo an array of extra info from the server level.
  * 
  * @returns {Promise<string>} The table
@@ -24,9 +26,9 @@ module.exports = async (unitsToGet, extraInfo) => {
 
 
     // Check if the units are anything other than km or miles
-    if (unitsToGet && !['km', 'miles', 'kilometers'].includes(unitsToGet)) {
-        stuffToReturn.push(warning('Units can only be \'km\' (kilometers) or \'miles\'.'
-        + ' Information will be in the deafult units: \'km\' (kilometers)'.brightGreen));
+    if (unitsToGet && !possibleUnits.includes(unitsToGet)) {
+        stuffToReturn.push(warning('Units can only be any of the following: ' + possibleUnits.join(', ') + '.'
+        + ' Information will be in the deafult units: \'kilometers\'.'.brightGreen));
         unitsToGet = 'kilometers';
     }
 
@@ -39,7 +41,8 @@ module.exports = async (unitsToGet, extraInfo) => {
     let astros = await iss.getAstros();
     astros = !astros ? 'N/A' : astros.join('\n');
 
-    let units = issInfo.units === 'kilometers' ? { a: 'km', v: 'km/h' } : { a: 'mi', v: 'mph' };
+    let units = issInfo.units === 'kilometers' || issInfo.units === 'km' 
+        ? { a: 'km', v: 'km/h' } : { a: 'mi', v: 'mph' };
 
     table.push(
         [
