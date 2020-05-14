@@ -5,7 +5,7 @@ A simple International Space Station tracker CLI.
 **The endpoint can be accessed at `iss.cryptid.dev`**
 
 ## Example
-![example1](/examples/examplegif.gif)
+![example1](https://s4.gifyu.com/images/issGIF.gif)
 
 ## How to use
 
